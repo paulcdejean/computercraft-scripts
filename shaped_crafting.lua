@@ -22,7 +22,7 @@ invsize = 16
 gridsize = 9
 crafting = {1, 2, 3,
             5, 6, 7,
-  		9, 10, 11}
+            9, 10, 11}
 holding = {4, 8, 12, 16, 15, 14, 13}
 limit = table.getn(holding)
 count = table.getn(ingredients)
@@ -31,14 +31,14 @@ count = table.getn(ingredients)
 for x = 1, count do
   if ingredients[x] > 16 then
     print("Invalid ingredient.")
-	return
+    return
   end
 end
 --[[ Check recipe validity. ]]--
 for x = 1, table.getn(recipe) do
   if recipe[x] > count then
     print("Invalid recipe.")
-	return
+    return
   end
 end
 --[[ Check ingredient types <= 7. ]]--
@@ -73,8 +73,8 @@ for x = 1, invsize do
   dropme = true
   for y = 1, count do
     if ingredients[y] == x then
-	  dropme = false
-	end
+      dropme = false
+    end
   end
   if dropme then
     turtle.select(x)
@@ -98,9 +98,9 @@ end
 crafting pattern. ]]--
 for x = 1, 9 do
   if recipe[x] > 0 then
-	turtle.select(holding[recipe[x]])
+    turtle.select(holding[recipe[x]])
     turtle.transferTo(crafting[x],
-	copies)
+    copies)
   end
 end
 --[[ Place surplus back into B. ]]--
